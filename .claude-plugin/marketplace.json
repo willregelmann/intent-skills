@@ -8,7 +8,6 @@
     {
       "name": "intent-skills",
       "description": "Skills for working with a project's intent — what it is for, as distinct from what it does or how it is built. Recover it into an INTENT.md, assess a project against it, and test which design choices it actually forces.",
-      "version": "0.1.0",
       "author": {
         "name": "Will Regelmann"
       },

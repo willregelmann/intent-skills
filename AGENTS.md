@@ -16,7 +16,9 @@ The collection's own intent is recorded in [INTENT.md](INTENT.md), produced by r
 skills/<skill-name>/SKILL.md     — one directory per skill, one file per skill
 ```
 
-This is a Claude Code plugin. Skills live under `skills/` and are auto-discovered — a new skill needs no manifest entry, only its own directory with a `SKILL.md`. Bump `version` in **both** manifests together when releasing; they drift silently otherwise.
+This is a Claude Code plugin. Skills live under `skills/` and are auto-discovered — a new skill needs no manifest entry, only its own directory with a `SKILL.md`.
+
+**The version lives in `plugin.json` and nowhere else.** The marketplace entry deliberately omits it: a marketplace says *which code* to install, and the plugin manifest that travels with that code says what version it is. Only 14 of the 273 plugins in the official marketplace duplicate a version into the entry, and every one of them is an unpinned in-repo source. Do not add it back — a second copy has nothing keeping it honest.
 
 There is no build system, no tests, no dependencies. The artifacts are markdown files with YAML frontmatter.
 
