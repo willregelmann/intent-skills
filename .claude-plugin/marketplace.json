@@ -1,0 +1,23 @@
+{
+  "name": "intent-skills",
+  "description": "Skills for working with project intent — recovering it, assessing a project against it, and testing which design choices it forces",
+  "owner": {
+    "name": "Will Regelmann"
+  },
+  "plugins": [
+    {
+      "name": "intent-skills",
+      "description": "Skills for working with a project's intent — what it is for, as distinct from what it does or how it is built. Recover it into an INTENT.md, assess a project against it, and test which design choices it actually forces.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Will Regelmann"
+      },
+      "source": {
+        "source": "github",
+        "repo": "willregelmann/intent-skills"
+      },
+      "category": "development",
+      "homepage": "https://github.com/willregelmann/intent-skills"
+    }
+  ]
+}

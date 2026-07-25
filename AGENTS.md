@@ -4,15 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A collection of Claude Code skills for working with project intent — recovering it, assessing a project against it, and testing which of a project's design choices its intent actually forces. Each skill is a standalone SKILL.md file in its own directory, installable via `npx skills add <owner>/intent-skills`.
+A collection of Claude Code skills for working with project intent — recovering it, assessing a project against it, and testing which of a project's design choices its intent actually forces. Each skill is a standalone SKILL.md file in its own directory, installable as a Claude Code plugin.
 
 The collection's own intent is recorded in [INTENT.md](INTENT.md), produced by running `discover-intent` against this repository. Read it before adding or reshaping a skill — in particular its Non-Goals, which are what make "this is out of scope" a thing you can say here. Note that nothing currently keeps that file current on its own; it is revised only when an assessment run escalates a change.
 
 ## Repository Structure
 
 ```
-<skill-name>/SKILL.md    — one directory per skill, one file per skill
+.claude-plugin/plugin.json       — plugin manifest
+.claude-plugin/marketplace.json  — single-plugin marketplace; the repo installs itself
+skills/<skill-name>/SKILL.md     — one directory per skill, one file per skill
 ```
+
+This is a Claude Code plugin. Skills live under `skills/` and are auto-discovered — a new skill needs no manifest entry, only its own directory with a `SKILL.md`. Bump `version` in **both** manifests together when releasing; they drift silently otherwise.
 
 There is no build system, no tests, no dependencies. The artifacts are markdown files with YAML frontmatter.
 

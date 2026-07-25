@@ -1,0 +1,10 @@
+{
+  "name": "intent-skills",
+  "version": "0.1.0",
+  "description": "Skills for working with a project's intent — what it is for, as distinct from what it does or how it is built. Recover it into an INTENT.md, assess a project against it, and test which design choices it actually forces.",
+  "author": {
+    "name": "Will Regelmann"
+  },
+  "repository": "https://github.com/willregelmann/intent-skills",
+  "keywords": ["intent", "documentation", "architecture", "onboarding", "planning"]
+}

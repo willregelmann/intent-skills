@@ -6,19 +6,22 @@ Agent skills for working with project intent — what a project is *for*, as dis
 
 | Skill | What it does |
 |-------|-------------|
-| [discover-intent](discover-intent/SKILL.md) | Reconciles what the docs claim against what the code does, escalates the disagreements, and produces an `INTENT.md` |
-| [intent-alignment](intent-alignment/SKILL.md) | Assesses a project against its `INTENT.md`, producing per-statement verdicts and a prioritized remediation plan |
-| [reimagine-from-intent](reimagine-from-intent/SKILL.md) | Commissions three clean-room designs from the intent alone and compares them against the current design |
+| [discover-intent](skills/discover-intent/SKILL.md) | Reconciles what the docs claim against what the code does, escalates the disagreements, and produces an `INTENT.md` |
+| [intent-alignment](skills/intent-alignment/SKILL.md) | Assesses a project against its `INTENT.md`, producing per-statement verdicts and a prioritized remediation plan |
+| [reimagine-from-intent](skills/reimagine-from-intent/SKILL.md) | Commissions three clean-room designs from the intent alone and compares them against the current design |
 
 ## Install
 
+This repository is a Claude Code plugin and its own single-plugin marketplace:
+
 ```
-npx skills add willregelmann/intent-skills -g -y
+/plugin marketplace add willregelmann/intent-skills
+/plugin install intent-skills@intent-skills
 ```
 
-The `-g` flag installs globally (user-level) so the skills are available in all projects. Omit it to install project-level instead.
+The skills activate automatically when a task matches their description, or you can invoke one directly by name.
 
-These are Claude Code skills. The `SKILL.md` format is portable to other agents, but cross-agent support isn't a goal — `reimagine-from-intent` requires spawning independent subagents, which not every host can do.
+Cross-agent support isn't a goal — `reimagine-from-intent` requires spawning independent subagents, which not every host can do.
 
 ## The Intent Layer
 
@@ -41,9 +44,13 @@ Crucially, it holds **targets, never measurements**: no counts, no percentages, 
 Each skill is a standalone `SKILL.md` with YAML frontmatter in its own directory:
 
 ```
-discover-intent/SKILL.md
-intent-alignment/SKILL.md
-reimagine-from-intent/SKILL.md
+.claude-plugin/
+  plugin.json        # plugin manifest
+  marketplace.json   # single-plugin marketplace, so the repo installs itself
+skills/
+  discover-intent/SKILL.md
+  intent-alignment/SKILL.md
+  reimagine-from-intent/SKILL.md
 ```
 
 No build system, no dependencies. The artifacts are markdown files.
