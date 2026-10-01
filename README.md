@@ -1,5 +1,7 @@
 # Intent Skills
 
+> **Archived.** This was an early attempt at working from intent. It's superseded by [invariant-driven-development](https://github.com/willregelmann/invariant-driven-development), and is no longer maintained.
+
 Agent skills for working with project intent — what a project is *for*, as distinct from what it does or how it's built.
 
 ## Skills
